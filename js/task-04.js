@@ -5,12 +5,15 @@ let counterValue = 0;
 
 
 
-decrementBtn.addEventListener(`click`, () => {
-    counterValue -=1;
-    return valueRef.textContent = counterValue;
-})  
+decrementBtn.addEventListener(`click`, decrementBtnClick)  
 
-incrementBtn.addEventListener(`click`, () => {
-    counterValue +=1;
+incrementBtn.addEventListener(`click`, incrementBtnClick)  
+
+function decrementBtnClick() {
+     counterValue -=1;
     return valueRef.textContent = counterValue;
-})  
+}
+function incrementBtnClick() {
+     counterValue +=1;
+    return valueRef.textContent = counterValue;
+}
