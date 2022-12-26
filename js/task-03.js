@@ -15,12 +15,7 @@ const images = [
 
 const galleryRef = document.querySelector(`.gallery`);
 
-const createImg = images.map(({url, alt}) => {
-  return galleryRef.insertAdjacentHTML("beforeend",`<li><img src='${url}' alt='${alt}' width = 150 height = 100></li>`);
-  
-})
+const createImg = images.map((image) => `<li><img src='${image.url}' alt='${image.alt}' width = 150 height = 100></li>`).join("");
 
+galleryRef.insertAdjacentHTML("beforeend", createImg);
 
-// --- вариант №2 -----
-// images.forEach(({ url, alt }) =>
-//   galleryRef.insertAdjacentHTML(`beforeend`, `<li><img src="${url}" alt="${alt}" width = 150 height = 100></img></li>`))
